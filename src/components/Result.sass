@@ -1,76 +1,77 @@
 @use '../assets/sass/abstracts/functions' as *
 
 .profile
-  margin-top: rem(24)
-  padding: rem(48)
-  border-radius: rem(15)
-  background-color: var(--profile-bg)
-  box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567)
-  align-items: flex-end
-  display: flex
-  flex-direction: column
-  gap: rem(32)
-
-
-  header
-    width: 100%
+    margin-top: rem(24)
+    padding: rem(48)
+    border-radius: rem(15)
+    background-color: var(--profile-bg)
+    box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567)
+    align-items: flex-end
     display: flex
-    gap: rem(37)
+    flex-direction: column
+    gap: rem(32)
 
-    .user-avatar
-      max-width: rem(117)
-      border-radius: 50%
 
-    .user-info
-      flex: 1
-
-      .login
-        color: var(--btn-color)
-
-      .name-and-joined-date
+    header
+        width: 100%
         display: flex
+        gap: rem(37)
+
+        .user-avatar
+            max-width: rem(117)
+            border-radius: 50%
+
+        .user-info
+            flex: 1
+
+            .login
+                color: var(--btn-color)
+
+            .name-and-joined-date
+                display: flex
+                justify-content: space-between
+
+                .name
+                    font-size: rem(26)
+                    font-weight: 700
+                    color: var(--bold-text-color)
+
+                .joined-date
+                    font-size: rem(15)
+                    color: var(--text-color-2)
+
+    .statistic
+        display: flex
+        width: 78%
         justify-content: space-between
+        background-color: var(--bg-color)
+        flex-wrap: wrap
+        padding: rem(12) rem(32)
 
-        .name
-          font-size: rem(26)
-          font-weight: 700
-          color: var(--bold-text-color)
+        div
+            p
+                color: var(--text-color-2)
+                font-size: rem(13)
 
-        .joined-date
-          font-size: rem(15)
-          color: var(--text-color-2)
-
-  .statistic
-    display: flex
-    width: 78%
-    justify-content: space-between
-    background-color: var(--bg-color)
-    flex-wrap: wrap
-    padding: rem(12) rem(32)
-
-    div
-      p
-        color: var(--text-color-2)
-        font-size: rem(13)
-      span
-        color: var(--bold-text-color)
-        font-weight: 700
-        font-size: rem(22)
+            span
+                color: var(--bold-text-color)
+                font-weight: 700
+                font-size: rem(22)
 
 
-    footer
-      display: flex
-      width: 78%
-      justify-content: space-between
-      flex-wrap: wrap
+        footer
+            display: flex
+            width: 78%
+            justify-content: space-between
+            flex-wrap: wrap
 
-      div
-        width: 50%
+            div
+                width: 50%
 
 
 .not-available
-  color: var(--text-color-2)
-  opacity: 0.75
-
-  img
+    color: var(--text-color-2)
     opacity: 0.75
+
+    img
+        opacity: 0.75
