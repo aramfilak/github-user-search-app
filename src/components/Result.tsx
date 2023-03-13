@@ -12,14 +12,14 @@ interface Props {
     created_at: string;
     html_url: string;
     login: string;
-    bio?: string;
     public_repos: number;
     followers: number;
     following: number;
-    location?: string;
-    twitter_username?: string;
-    blog?: string;
-    company?: string;
+    location: string | null;
+    bio: string | null;
+    twitter_username: string | null;
+    blog: string | null;
+    company: string | null;
   };
 }
 
@@ -86,7 +86,7 @@ const Result: React.FC<Props> = ({ user }) => {
         </div>
         <div>
           <a
-            href={user.blog}
+            href={user.blog || "#"}
             target="_blank"
             className={user.blog ? "available" : "not-available"}
           >
