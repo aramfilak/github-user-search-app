@@ -1,77 +1,110 @@
 @use '../assets/sass/abstracts/functions' as *
-
+@use '../assets/sass/abstracts/breakpoints' as *
 .profile
-    margin-top: rem(24)
-    padding: rem(48)
-    border-radius: rem(15)
-    background-color: var(--profile-bg)
-    box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567)
-    align-items: flex-end
+  padding: rem(24)
+  margin-top: rem(24)
+  border-radius: rem(15)
+  background-color: var(--profile-bg)
+  box-shadow: 0 rem(16) rem(30) rem(-10) rgba(70, 96, 187, 0.198567)
+  display: flex
+  flex-direction: column
+  gap: rem(24)
+  position: relative
+  @include mq(lg)
+    padding-left: rem(180)
+
+  header
     display: flex
-    flex-direction: column
-    gap: rem(32)
+    gap: rem(20)
 
+    .user-avatar
+      max-width: rem(70)
+      border-radius: 50%
+      @include mq(sm)
+        max-width: rem(117)
+      @include mq(lg)
+        position: absolute
+        left: rem(24)
 
-    header
+    .user-info
+      @include mq(lg)
         width: 100%
         display: flex
-        gap: rem(37)
-
-        .user-avatar
-            max-width: rem(117)
-            border-radius: 50%
-
-        .user-info
-            flex: 1
-
-            .login
-                color: var(--btn-color)
-
-            .name-and-joined-date
-                display: flex
-                justify-content: space-between
-
-                .name
-                    font-size: rem(26)
-                    font-weight: 700
-                    color: var(--bold-text-color)
-
-                .joined-date
-                    font-size: rem(15)
-                    color: var(--text-color-2)
-
-    .statistic
-        display: flex
-        width: 78%
+        align-items: center
         justify-content: space-between
-        background-color: var(--bg-color)
-        flex-wrap: wrap
-        padding: rem(12) rem(32)
 
-        div
-            p
-                color: var(--text-color-2)
-                font-size: rem(13)
+      .user-name
+        h1
+          font-size: rem(16)
+          font-weight: 700
+          color: var(--bold-text-color)
+          @include mq(sm)
+            font-size: rem(26)
 
-            span
-                color: var(--bold-text-color)
-                font-weight: 700
-                font-size: rem(22)
+        .login
+          font-size: rem(13)
+          color: var(--btn-color)
+          @include mq(sm)
+            font-size: rem(16)
 
+      .joined-date
+        font-size: rem(13)
+        color: var(--text-color-2)
+        @include mq(sm)
+          font-size: rem(15)
 
-        footer
-            display: flex
-            width: 78%
-            justify-content: space-between
-            flex-wrap: wrap
+  .bio
+    font-size: rem(13)
+    @include mq(sm)
+      font-size: rem(15)
 
-            div
-                width: 50%
+  .statistic
+    display: flex
+    text-align: center
+    justify-content: space-between
+    flex-wrap: wrap
+    background-color: var(--bg-color)
+    padding: rem(12) rem(32)
+    @include mq(sm)
+      text-align: start
 
+    div
+      p
+        color: var(--text-color-2)
+        font-size: rem(11)
+        @include mq(sm)
+          font-size: rem(13)
+
+      span
+        color: var(--bold-text-color)
+        font-weight: 700
+        font-size: rem(16)
+        @include mq(sm)
+          font-size: rem(22)
+
+  .links
+    @include mq(sm)
+      display: grid
+      grid-template-columns: 1fr 1fr
+
+    div
+      margin-bottom: rem(16)
+
+      a
+        color: var(--text-color-1)
+        font-size: rem(15)
+
+        img
+          margin-right: rem(15)
+
+        &:hover
+          text-decoration: underline
 
 .not-available
-    color: var(--text-color-2)
-    opacity: 0.75
+  color: var(--text-color-2)
+  opacity: 0.75
+  cursor: default
+  pointer-events: none
 
-    img
-        opacity: 0.75
+  img
+    opacity: 0.75

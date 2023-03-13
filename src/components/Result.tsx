@@ -29,25 +29,25 @@ const Result: React.FC<Props> = ({ user }) => {
       <header>
         <img className="user-avatar" src={user.avatar_url} alt="User Avatar" />
         <div className="user-info">
-          <div className="name-and-joined-date">
-            <h1 className="name">{user.name}</h1>
-            <p className="joined-date">
-              {"Joined " +
-                new Date(user.created_at)?.toLocaleDateString("us", {
-                  day: "numeric",
-                  month: "short",
-                  year: "numeric",
-                })}
-            </p>
+          <div className="user-name">
+            <h1>{user.name}</h1>
+            <a className="login" href={user.html_url} target="_blank">
+              @{user.login}
+            </a>
           </div>
-          <a className="login" href={user.html_url} target="_blank">
-            @{user.login}
-          </a>
-          <p className={user.bio ? "available" : "not-available"}>
-            {user.bio || "This profile has no bio"}
+          <p className="joined-date">
+            {"Joined " +
+              new Date(user.created_at)?.toLocaleDateString("us", {
+                day: "numeric",
+                month: "short",
+                year: "numeric",
+              })}
           </p>
         </div>
       </header>
+      <section className={user.bio ? "bio available" : "bio not-available"}>
+        {user.bio || "This profile has no bio"}
+      </section>
       <section className="statistic">
         <div>
           <p>Repos</p>
@@ -62,8 +62,7 @@ const Result: React.FC<Props> = ({ user }) => {
           <span>{user.following}</span>
         </div>
       </section>
-
-      <footer>
+      <footer className="links">
         <div>
           <a
             href={`https://maps.google.com/?q= ${user.location}`}
@@ -97,6 +96,7 @@ const Result: React.FC<Props> = ({ user }) => {
         <div>
           <a
             href={`https://www.google.com/search?q=${user.company}`}
+            target="_blank"
             className={user.company ? "available" : "not-available"}
           >
             <img src={CompanyIcon} alt="Company Icon" />

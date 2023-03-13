@@ -1,16 +1,20 @@
-@use "assets/sass/abstracts/_functions.sass" as *
-
+@use "assets/sass/abstracts/_functions" as *
+@use "assets/sass/abstracts/breakpoints" as *
 .App
-    display: flex
-    flex-direction: column
-    justify-content: center
-    align-items: center
-    background-color: var(--bg-color)
-    min-height: 100vh
+
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  background-color: var(--bg-color)
+  min-height: 100vh
 
 .container
+  width: rem(327)
+  @include mq(sm)
+    width: rem(573)
+  @include mq(lg)
     width: rem(760)
     background-color: var(--bg-color)
 
 
-     

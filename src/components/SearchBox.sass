@@ -1,41 +1,53 @@
-@use '../assets/sass/abstracts/functions' as *
+@use "../assets/sass/abstracts/functions" as *
+@use "../assets/sass/abstracts/breakpoints" as *
 
 .search-box
-    display: flex
-    justify-content: space-between
-    align-items: center
-    gap: rem(24)
-    background-color: var(--profile-bg)
-    padding: rem(10)
-    box-shadow: 0 rem(16) rem(30) rem(-10) rgba(70, 96, 187, 0.198567)
-    border-radius: rem(15)
+  display: flex
+  justify-content: space-between
+  align-items: center
+  background-color: var(--profile-bg)
+  padding: rem(10)
+  box-shadow: 0 rem(16) rem(30) rem(-10) rgba(70, 96, 187, 0.198567)
+  border-radius: rem(15)
 
-    &__box
-        width: 60%
-        border: none
-        background-image: url('../assets/images/icon-search.svg')
-        background-repeat: no-repeat
-        background-position: 2% 50%
-        padding-left: rem(64)
-        font-weight: 400
-        font-size: rem(18)
+  &__box
+    width: 60%
+    border: none
+    background-image: url('../assets/images/icon-search.svg')
+    background-repeat: no-repeat
+    background-position: 2% 60%
+    background-size: rem(21)
+    font-weight: 400
+    font-size: rem(13)
+    padding-left: rem(30)
+    @include mq(sm)
+      font-size: rem(18)
+      background-size: auto
+      padding-left: rem(64)
+    &:focus
+      outline: none
 
-        &:focus
-            outline: none
-
-    &__btn
-        font-weight: 700
-        font-size: rem(16)
-        background-color: var(--btn-color)
-        color: var(--profile-bg)
-        padding-block: rem(13)
-        padding-inline: rem(24)
-        border-radius: rem(10)
+  &__btn
+    font-weight: 700
+    font-size: rem(14)
+    background-color: var(--btn-color)
+    color: var(--profile-bg)
+    padding-block: rem(13)
+    padding-inline: rem(24)
+    border-radius: rem(10)
+    transition: all .2s
+    @include mq(sm)
+      font-size: rem(16)
+    &:hover
+      opacity: 0.75
 
 .err-msg
-    display: block
-    color: red
+  font-size: rem(13)
+  display: block
+  color: red
+  @include mq(sm)
+    font-size: rem(15)
 
 .no-err
-    display: none
+  display: none
 
