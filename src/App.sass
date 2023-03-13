@@ -9,12 +9,49 @@
   background-color: var(--bg-color)
   min-height: 100vh
 
-.container
-  width: rem(327)
-  @include mq(sm)
-    width: rem(573)
-  @include mq(lg)
-    width: rem(760)
-    background-color: var(--bg-color)
+  .container
+    width: rem(327)
+    @include mq(sm)
+      width: rem(573)
+    @include mq(lg)
+      width: rem(760)
+      background-color: var(--bg-color)
 
+    header
+      display: flex
+      justify-content: space-between
+      margin-bottom: rem(36)
+
+      h2
+        color: var(--bold-text-color)
+
+      .switch-theme-btn
+        display: flex
+        gap: rem(10)
+        align-items: center
+
+        &:hover
+          filter: contrast(50%) brightness(60%)
+          transition: all 0.3s
+
+        p
+          text-transform: uppercase
+          color: var(--text-color-1)
+
+.App
+  --bg-color: #f6f8ff
+  --profile-bg: #fff
+  --btn-color: #0079ff
+  --text-color-1: #4b7a9b
+  --text-color-2: #697c9a
+  --bold-text-color: #2b3442
+  --shadow: #4660BB32
+
+.App.dark
+  --bg-color: #141d2f
+  --profile-bg: #1e2a47
+  --text-color-1: #fff
+  --text-color-2: #fff
+  --bold-text-color: #fff
+  --shadow: #141d2f
 

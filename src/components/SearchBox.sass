@@ -7,7 +7,7 @@
   align-items: center
   background-color: var(--profile-bg)
   padding: rem(10)
-  box-shadow: 0 rem(16) rem(30) rem(-10) rgba(70, 96, 187, 0.198567)
+  box-shadow: 0 rem(16) rem(30) rem(-10) var(--shadow)
   border-radius: rem(15)
 
   &__box
@@ -20,12 +20,18 @@
     font-weight: 400
     font-size: rem(13)
     padding-left: rem(30)
+    background-color: var(--profile-bg)
+    color: var(--bold-text-color)
     @include mq(sm)
       font-size: rem(18)
       background-size: auto
       padding-left: rem(64)
+
     &:focus
       outline: none
+
+    &::placeholder
+      color: var(--text-color-2)
 
   &__btn
     font-weight: 700
@@ -38,8 +44,10 @@
     transition: all .2s
     @include mq(sm)
       font-size: rem(16)
+
     &:hover
       opacity: 0.75
+    color: #fff
 
 .err-msg
   font-size: rem(13)
