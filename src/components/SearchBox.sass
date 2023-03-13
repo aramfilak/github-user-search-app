@@ -3,13 +3,15 @@
 .search-box
   display: flex
   justify-content: space-between
-  background-color: var(--white)
+  align-items: center
+  gap: rem(24)
+  background-color: var(--profile-bg)
   padding: rem(10)
   box-shadow: 0 rem(16) rem(30) rem(-10) rgba(70, 96, 187, 0.198567)
   border-radius: rem(15)
 
   &__box
-    width: 80%
+    width: 60%
     border: none
     background-image: url('../assets/images/icon-search.svg')
     background-repeat: no-repeat
@@ -25,10 +27,15 @@
     font-weight: 700
     font-size: rem(16)
     background-color: var(--btn-color)
-    color: var(--white)
+    color: var(--profile-bg)
     padding-block: rem(13)
     padding-inline: rem(24)
     border-radius: rem(10)
 
+.err-msg
+  display: block
+  color: red
 
+.no-err
+  display: none
 
